@@ -125,6 +125,11 @@ export const faqItems = [
       'It will very soon. The Multi-Party Agent Wallet supports EVMs now and other chains such as Solana, NEAR, TON, Stellar etc. are being added now (but not yet released).',
   },
   {
+    question: 'Does the Multi-Party Agent wallet use encryption?',
+    answer:
+      'Yes. The nodes use TLS 1.2 for the message signing rounds and the communication between the browser at https://mpa.continuumdao.org and the nodes request JWTs from the server to bypass the server and use TLS 1.3 with the nodes, utilizing either self-signed certs, or CA approved certs.',
+  },
+  {
     question: 'Does the Multi-Party Agent Wallet depend on any external services to function?',
     answer:
       'No. The Multi-Party Agent Wallet is self-contained and does not depend on any external services to function. It is designed to be resilient and decentralized. Once installed using Docker, the configured nodes in a Group manage their own secure communication with each other. Even the Multi-Party Agent front end is not required if management signatures are made using ed25519 key pairs and the Restful API rather than MetaMask',

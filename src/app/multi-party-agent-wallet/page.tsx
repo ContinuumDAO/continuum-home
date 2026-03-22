@@ -1,29 +1,29 @@
-import Image from 'next/image'
-import { Header } from '@/components/Header'
+'use client'
+
+import { useEffect } from 'react'
+
+const MPA_URL = 'https://mpa.continuumdao.org'
 
 export default function MultiPartyAgentWalletPage() {
+  useEffect(() => {
+    window.location.replace(MPA_URL)
+  }, [])
+
   return (
-    <>
-      <div
-        className="fixed inset-0 z-0 min-h-screen min-w-full overflow-hidden pointer-events-none"
-        aria-hidden
-      >
-        <Image
-          src="/images/background-graphic.gif"
-          alt=""
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-      </div>
-      <div className="relative z-10">
-        <Header />
-      <main className="min-h-screen flex items-center justify-center px-6">
-        <p className="text-center text-white text-lg sm:text-xl md:text-2xl font-medium max-w-2xl">
-          This page will appear soon. Stay tuned.
-        </p>
-      </main>
-      </div>
-    </>
+    <main className="min-h-screen flex flex-col items-center justify-center gap-4 bg-black px-6 text-center">
+      <p className="text-white text-lg sm:text-xl">
+        Redirecting to Multi-Party Agent Wallet…
+      </p>
+      <p className="text-white/70 text-sm">
+        If you are not redirected,{' '}
+        <a
+          href={MPA_URL}
+          className="text-white underline underline-offset-2 hover:text-white/90"
+        >
+          open the app
+        </a>
+        .
+      </p>
+    </main>
   )
 }
