@@ -37,7 +37,7 @@ const ourToken = [
 ]
 
 const mpcMenu = [
-  { name: 'Multi-Party Agent Wallet', href: 'https://mpa.continuumdao.org' },
+  { name: 'Multi-Party Agent Wallet', href: 'https://mpa.continuumdao.org/node-map' },
   { name: 'What is MPC?', href: 'https://docs.continuumdao.org/ContinuumDAO/MPC/WhatIsMPC' },
   { name: 'Our MPC Network', href: '/mpc-network' },
 ]

@@ -67,7 +67,7 @@ export const faqItems = [
   {
     question: 'What is the Multi-Party Agent Wallet?',
     answer:
-      'The Multi-Party Agent Wallet is a human-in-the-loop transaction wallet designed for AI agents. It can be used to sign transactions with a private key generated collectively by multiple nodes. The nodes can either be humans (for human-in-the-loop transactions) or AI agents. Context built up over time between AI Agents and humans is stored on the nodes and is accessible by any AI Agent. Suitable for use with Open Claw, to allow controlled access to assets. Also suitable for DAOs, so that complex proposals can be summarized by AI before voting. Multi-Party Agent Wallets can optionally join the C3Caller MPC signer pool to earn rewards.',
+      'The Multi-Party Agent Wallet is a human-in-the-loop transaction wallet designed for AI agents. It can be used to sign transactions with a private key generated collectively by multiple nodes. The nodes can either be humans (for human-in-the-loop transactions) or AI agents. AI agents and humans together can use a sophisticated set of built-in tools, including many popular DeFi protocols to plan research and execute trades. The dedicated AI harness allows custom MCPs, cron tasks, planning and looping and AI generated custom trading charts. Also suitable for DAOs, so that complex proposals can be summarized by AI before voting. Multi-Party Agent Wallets can optionally join the C3Caller MPC signer pool to earn rewards.',
   },
   {
     question: 'What is C3Governor?',
@@ -117,7 +117,7 @@ export const faqItems = [
   {
     question: 'What is the Multi-Party Agent Wallet?',
     answer:
-      'The Multi-Party Agent Wallet is a human-in-the-loop transaction wallet designed for both humans and AI agents. It can be used to sign transactions with a private key generated collectively by multiple nodes. The nodes can either be humans (for human-in-the-loop transactions) or AI agents. Context built up over time between AI Agents and humans is stored on the nodes and is accessible by any AI Agent. Suitable for use with Open Claw, to allow controlled access to assets. Also suitable for DAOs, so that complex proposals can be summarized by AI before voting. Multi-Party Agent Wallets can optionally join the C3Caller MPC signer pool to earn rewards.',
+      'The Multi-Party Agent Wallet is a human-in-the-loop transaction wallet designed for both humans and AI agents. It can be used to sign transactions with a private key generated collectively by multiple nodes. The nodes can either be humans (for human-in-the-loop transactions) or AI agents. AI agents and humans together can use a sophisticated set of built-in tools, including many popular DeFi protocols to plan research and execute trades. The dedicated AI harness allows custom MCPs, cron tasks, planning and looping and AI generated custom trading charts. Also suitable for DAOs, so that complex proposals can be summarized by AI before voting. Multi-Party Agent Wallets can optionally join the C3Caller MPC signer pool to earn rewards.',
   },
   {
     question: 'Does the Multi-Party Agent Wallet support EVMs and other chains such as Solana, NEAR, TON, Stellar etc.?',

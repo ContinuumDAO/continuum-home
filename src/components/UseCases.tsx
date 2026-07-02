@@ -14,7 +14,8 @@ const useCaseItems = [
   {
     title: 'Multi-Party Agent Wallet',
     image: MultiPartyAgentWallet,
-    text: 'A multi-auth wallet where a private key, generated collectively by multiple nodes is used in signatures. The nodes can either be humans (for human-in-the-loop transactions) or AI agents. Context built up over time between AI Agents and humans is stored on the nodes and is accessible by any AI Agent. Suitable for use with Open Claw, to allow controlled access to assets. Also suitable for DAOs, so that complex proposals can be summarized by AI before voting. Multi-Party Agent Wallets can optionally join the C3Caller MPC signer pool to earn rewards.',
+    text: 'A multi-auth wallet where a private key, generated collectively by multiple nodes is used in signatures. The nodes can either be humans (for human-in-the-loop transactions) or AI agents. AI agents and humans together can use a sophisticated set of built-in tools, including unified UX to many popular DeFi protocols. The dedicated AI harness allows users to plan research and execute trades, access hundreds of custom MCP tools, use cron tasks, Plan mode, looping and AI generated custom trading charts. Also suitable for DAOs, so that complex proposals can be summarized by AI before voting. Multi-Party Agent Wallets can optionally join the C3Caller MPC signer pool to earn rewards. The MPA wallet can be installed on a PC (Windows 11/MacOS/Linux), or on a VPS easily with a single command.',
+    scrollable: true,
   },
   {
     title: 'C3Governor: Cross-on-chain DAO Governance',
@@ -60,7 +61,13 @@ export function UseCases() {
                     </div>
                   )}
                 </div>
-                <p className="font-light leading-7 text-white/70 text-base sm:text-lg text-left">
+                <p
+                  className={`font-light leading-7 text-white/70 text-base sm:text-lg text-left ${
+                    item.scrollable
+                      ? 'use-case-scroll max-h-48 overflow-y-auto pr-2'
+                      : ''
+                  }`}
+                >
                   {item.text}
                 </p>
               </div>

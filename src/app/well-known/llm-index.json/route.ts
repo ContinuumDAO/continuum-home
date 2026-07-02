@@ -25,7 +25,7 @@ const llmIndex = {
       { name: 'Forum', url: 'https://forum.continuumdao.org/' },
       { name: 'Staking', url: `${SITE_URL}/staking` },
       { name: 'MPC Network', url: `${SITE_URL}/mpc-network` },
-      { name: 'Multi-Party Agent Wallet', url: 'https://mpa.continuumdao.org' },
+      { name: 'Multi-Party Agent Wallet', url: 'https://mpa.continuumdao.org/node-map' },
     ],
   },
 }

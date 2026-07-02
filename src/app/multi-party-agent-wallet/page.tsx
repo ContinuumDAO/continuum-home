@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react'
 
-const MPA_URL = 'https://mpa.continuumdao.org'
+const MPA_URL = 'https://mpa.continuumdao.org/node-map'
 
 export default function MultiPartyAgentWalletPage() {
   useEffect(() => {
