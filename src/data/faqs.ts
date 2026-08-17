@@ -119,6 +119,21 @@ export const faqItems = [
       'The Multi-Party Agent Wallet (MPA wallet) lets people and AI agents jointly control wallet addresses using MPC — there is no full private key on any device until a Group deliberately ejects a KeyGen. Each node includes a built-in AI agent harness and a full manual UI. Typical personal setup: two nodes with 2/2 threshold (AI-assisted node plus human circuit breaker). Overview: https://docs.continuumdao.org/ContinuumDAO/MPAWallet/Overview.',
   },
   {
+    question: 'Is the MPA wallet decentralized?',
+    answer:
+      'Yes. Custody is fully decentralized: threshold key shares live only on nodes you deploy — not in a vendor database or on ContinuumDAO servers. You choose Group members, thresholds, and where nodes run (home PC or VPS). The hosted UI at mpa.continuumdao.org is optional; day-to-day control connects directly to your node. There is no custodial recovery service and no ContinuumDAO-held backup of your shares. Even if ContinuumDAO ceased operations, your wallet would keep working from your deployed nodes and backups. Details: https://docs.continuumdao.org/ContinuumDAO/MPAWallet/Overview.',
+  },
+  {
+    question: 'Do I need to register or provide personal data to use the MPA wallet?',
+    answer:
+      'No. There is no central account signup and Continuum does not ask for your email, home address, phone number, or identity verification to install a node or create an MPC wallet. You run the installer yourself, set management signing keys (Ed25519 or MetaMask EIP-191), and form Groups with peers you choose — unlike many hardware wallets, there is no vendor enrollment tied to your name, email, or postal address. Some third-party DeFi protocols you access through the wallet may require their own API keys or issuer KYC; that is separate from Continuum setup. Start here: https://docs.continuumdao.org/ContinuumDAO/MPAWallet/Install.',
+  },
+  {
+    question: 'Does ContinuumDAO hold my keys or funds?',
+    answer:
+      'No. ContinuumDAO does not custody threshold shares, wallet balances, or recovery material. Shares and encrypted wallet state live only on nodes you operate. Back up bootstrap keys and encrypted database snapshots yourself. See the decentralization FAQ above and https://docs.continuumdao.org/ContinuumDAO/MPAWallet/BackupAndRestoration.',
+  },
+  {
     question: 'How is the MPA wallet different from a multi-sig wallet?',
     answer:
       'Multi-sig wallets combine signatures from separate on-chain keys. The MPA wallet uses off-chain MPC among your nodes; only the final single signature appears on-chain. Accept/Reject decisions and node coordination are not recorded on-chain, which preserves privacy for the Group\'s decision process.',
@@ -139,19 +154,39 @@ export const faqItems = [
       'Your browser attaches directly to your node — ContinuumDAO does not custody or proxy wallet control. Options: Node hosted app (local PC), Node hosted app over SSH tunnel (typical for VPS), or Browser HTTPS with your node certificate. Walkthrough: https://docs.continuumdao.org/ContinuumDAO/MPAWallet/AttachYourNode.',
   },
   {
+    question: 'How do the built-in AI agent and human-in-the-loop work?',
+    answer:
+      'Every node ships with an AI agent harness (Node → AI Agent). Link an LLM provider, enable the continuum MCP server, and use Agent chat or Plan mode to research and propose trades. On-chain spends still require enough nodes to Accept on the Join tab — the agent cannot bypass your threshold. Typical personal setup: 2/2 with one AI-assisted node and one human circuit-breaker node. Configure: https://docs.continuumdao.org/ContinuumDAO/MPAWallet/AIHarness/Configure.',
+  },
+  {
+    question: 'Can I use the MPA wallet without AI?',
+    answer:
+      'Yes. The node app is a full manual wallet: Groups, KeyGens, Compose, DeFi protocol flows, Accept/Reject on the Join tab, and Execute — no agent required. The built-in AI harness is optional. https://docs.continuumdao.org/ContinuumDAO/MPAWallet/AIHarness/Overview.',
+  },
+  {
+    question: 'What if I lose a node or my server fails?',
+    answer:
+      'Back up each node\'s bootstrap Ed25519 key and encrypted database snapshot to separate storage you control — https://docs.continuumdao.org/ContinuumDAO/MPAWallet/BackupAndRestoration. With a sensible Group threshold (for example 2/2 or 2/3), losing one machine does not strand wallet assets if other peers still hold shares. Run spare nodes in the same Group for resilience. Restoring a dead machine needs both the bootstrap private key and an encrypted DB backup for that node.',
+  },
+  {
+    question: 'Can I export my MPA wallet to MetaMask or another standard wallet?',
+    answer:
+      'Yes, if enough Group members agree. Eject is a threshold-governed process that reconstructs a normal private key for import into MetaMask or similar wallets — it permanently ends MPC control of that KeyGen. https://docs.continuumdao.org/ContinuumDAO/MPAWallet/EjectConversion.',
+  },
+  {
+    question: 'Do I need KYC to use the MPA wallet?',
+    answer:
+      'Continuum does not require KYC to install nodes or operate an MPC wallet. Individual DeFi protocols integrated in the node (for example some permissioned Uniswap pools) may require issuer KYC or API keys on their side — check each protocol in https://docs.continuumdao.org/ContinuumDAO/MPAWallet/DeFiProtocolSupport.',
+  },
+  {
     question: 'What blockchains does the MPA wallet support?',
     answer:
       'EVM chains and Bitcoin (SegWit and Taproot) are supported today. Ed25519 chains such as Solana are rolling out; NEAR, TON, Stellar, and others are planned. Chain configuration is per-node — see https://docs.continuumdao.org/ContinuumDAO/MPAWallet/ChainManagement.',
   },
   {
-    question: 'Does ContinuumDAO hold my keys or funds?',
+    question: 'Does the MPA wallet support Bitcoin?',
     answer:
-      'No. Unlike many MPC products, shares are not stored in a vendor database. Threshold shares, Group state, and encrypted context live only on nodes you run. Back up bootstrap keys and encrypted database snapshots yourself — https://docs.continuumdao.org/ContinuumDAO/MPAWallet/BackupAndRestoration. The hosted UI at mpa.continuumdao.org is optional; management traffic goes to your node.',
-  },
-  {
-    question: 'How do the built-in AI agent and human-in-the-loop work?',
-    answer:
-      'Every node ships with an AI agent harness (Node → AI Agent). Link an LLM provider, enable the continuum MCP server, and use Agent chat or Plan mode to research and propose trades. On-chain spends still require enough nodes to Accept on the Join tab — the agent cannot bypass your threshold. Configure: https://docs.continuumdao.org/ContinuumDAO/MPAWallet/AIHarness/Configure. You can use the wallet entirely without AI via the node app UI.',
+      'Yes. The MPA wallet supports decentralized BTC custody via SegWit (bc1q…) and Taproot (bc1p…) using the same MPC Accept/Reject flow as EVM assets — no single recoverable private key on any device and no hardware-wallet vendor registration. https://docs.continuumdao.org/ContinuumDAO/MPAWallet/Bitcoin.',
   },
   {
     question: 'What DeFi protocols can the MPA wallet use?',
@@ -166,7 +201,7 @@ export const faqItems = [
   {
     question: 'Is there a fee to use the MPA wallet?',
     answer:
-      'Each KeyGen receives a free allowance of sign requests; after that, a small per-signature fee (governed by the DAO, typically a few cents) is deducted from a balance you top up for that address. Running your own nodes and software is free aside from your hosting and chain gas costs.',
+      'MPA wallet access can be paid via a monthly subscription, or you can use Stake to subscribe: attach veCTM to your node from the staking panel after it is running and receive free wallet use up to a governance-set free signature limit. Without staked veCTM, each KeyGen also gets a trial allowance of sign requests; beyond that, a small per-signature fee (set by the DAO) applies, or you pay the monthly subscription. Running your own node software is free aside from hosting and chain gas. Details: https://docs.continuumdao.org/ContinuumDAO/MPAWallet/Overview.',
   },
   {
     question: 'Can my MPA wallet also earn C3Caller signer rewards?',
