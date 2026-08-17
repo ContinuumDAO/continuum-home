@@ -17,4 +17,5 @@ RUN npm install -g serve@14.2.4
 COPY --from=build /app/out ./out
 
 ENV NODE_ENV=production
-CMD ["sh", "-c", "serve out -l ${PORT:-8888}"]
+EXPOSE 8888
+CMD ["sh", "-c", "exec serve out --listen tcp://0.0.0.0:${PORT:-8888}"]
