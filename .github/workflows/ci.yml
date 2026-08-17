@@ -25,11 +25,20 @@ jobs:
       - name: Build static site
         run: npm run build
 
-      - name: Trigger Railway deploy
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Trigger Railway deployment
         env:
           RAILWAY_DEPLOY_HOOK_URL: ${{ secrets.RAILWAY_DEPLOY_HOOK_URL }}
         run: |
-          if [ -n "$RAILWAY_DEPLOY_HOOK_URL" ]; then
-            curl -fsS -X POST "$RAILWAY_DEPLOY_HOOK_URL"
+          if [ -z "$RAILWAY_DEPLOY_HOOK_URL" ]; then
+            echo "::error::Missing GitHub secret RAILWAY_DEPLOY_HOOK_URL."
+            echo "Railway → continuum-home → Settings → Deploy → Deploy Hook → copy URL"
+            echo "GitHub → continuum-home → Settings → Secrets → Actions → New repository secret"
+            exit 1
           fi
+          curl -fsS -X POST "$RAILWAY_DEPLOY_HOOK_URL"
+          echo "Railway deploy triggered."

@@ -26,19 +26,27 @@ You can start editing this template by modifying the files in the `/src` folder.
 
 This site is a static Next.js export (`out/`) served with `serve`.
 
-Railway should autodeploy on push to `main`. If **Wait for CI** is enabled in Railway
-service settings, deployments only proceed after the GitHub Actions workflow succeeds
-(see `.github/workflows/ci.yml`).
+### Automatic deploy on push
 
-If pushes still do not deploy:
+GitHub Actions builds on every push to `main`, then triggers Railway via a **deploy hook**
+(see `.github/workflows/ci.yml`). This is more reliable than Railway's GitHub webhook alone.
 
-1. In Railway → service **Settings** → confirm **Autodeploy** is enabled and the branch is `main`.
-2. Check **Watch paths** — leave empty or include `src/**`, `.github/**`, `package.json`.
-3. Under **Deploy** → copy the **Deploy Hook** URL and add it as a GitHub repo secret named `RAILWAY_DEPLOY_HOOK_URL` (the CI workflow POSTs to it after a successful build).
-4. Or use Command Palette → **Deploy Latest Commit** for a one-off deploy.
+**One-time setup** (required):
 
-Build/start commands are defined in `railway.toml` (`npm run build`, `npm start`).
-Railway uses the `Dockerfile` when present (static export served with `serve` on `$PORT`).
+1. Railway → **continuum-home** → **Settings** → **Deploy** → **Deploy Hook** → copy the URL
+2. GitHub → **ContinuumDAO/continuum-home** → **Settings** → **Secrets and variables** → **Actions**
+3. Add secret: `RAILWAY_DEPLOY_HOOK_URL` = the deploy hook URL
+
+After that, every `git push` to `main` builds in GitHub Actions and triggers Railway.
+
+Railway also has autodeploy on `main` enabled; if that webhook misses a push, the deploy hook
+from CI still deploys. Check **Watch paths** in Railway service settings — leave empty or include
+`Dockerfile`, `src/**`, `.github/**`, and `package.json`.
+
+Build/start commands are defined in `railway.toml`. Railway uses the `Dockerfile` when present
+(static export served with `serve` on `$PORT`).
+
+**Manual deploy:** Railway Command Palette → **Deploy Latest Commit**
 
 ## License
 
