@@ -1,3 +1,5 @@
+import { llmldGetStarted } from '@/lib/install-node-discovery'
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://continuumdao.org'
 const DOCS_URL = 'https://docs.continuumdao.org'
 
@@ -16,10 +18,22 @@ const llmIndex = {
       'CTM is the governance and rewards token; veCTM is voting escrow (lock up to 4 years).',
       'C3Caller provides cross-chain messaging; C3Governor extends governance across chains.',
       'Multi-Party Agent Wallet supports human-in-the-loop and AI agentic signing.',
+      'Install an MPA node from the node map (+ button) on VPS or home PC (Windows 11, macOS, Linux); one node is not enough for a wallet — add peers, a Group, and a KeyGen.',
     ],
   },
+  'llmld:getStarted': llmldGetStarted(SITE_URL),
   'llmld:actions': {
     primary: [
+      {
+        name: 'Install an MPA node',
+        url: 'https://mpa.continuumdao.org/node-map',
+        description:
+          'Start here for new users: click + on the node map, or see Install.md for platform-specific paths (VPS one-shot script, Docker Desktop on Windows/macOS/Linux).',
+      },
+      {
+        name: 'Install guide (docs)',
+        url: `${DOCS_URL}/ContinuumDAO/MPAWallet/Install`,
+      },
       { name: 'FAQs', url: `${SITE_URL}/faqs` },
       { name: 'Vote / Governance', url: 'https://app.continuumdao.org/governance' },
       { name: 'Forum', url: 'https://forum.continuumdao.org/' },

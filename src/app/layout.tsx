@@ -128,6 +128,12 @@ export default function RootLayout({
         />
         <link
           rel="alternate"
+          type="application/json"
+          href={`${SITE_URL}/well-known/install-node.json`}
+          title="MPA Node Install Guide"
+        />
+        <link
+          rel="alternate"
           type="text/plain"
           href={`${DOCS_URL}/llms.txt`}
           title="ContinuumDAO Documentation (llms.txt)"

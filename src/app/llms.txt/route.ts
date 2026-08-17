@@ -1,3 +1,5 @@
+import { buildInstallLlmsTxtSection } from '@/lib/install-node-discovery'
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://continuumdao.org'
 const DOCS_URL = 'https://docs.continuumdao.org'
 
@@ -5,13 +7,16 @@ const llmsTxt = `# ContinuumDAO
 
 > ContinuumDAO runs a public permissionless decentralized Multi-Party Computation (MPC) network for cross-chain messaging, AI agentic wallets, and cross-chain governance.
 
+${buildInstallLlmsTxtSection(SITE_URL)}
 ## This site
 
 - [Home](${SITE_URL}/): Landing page — overview, use cases, tokenomics
 - [FAQs](${SITE_URL}/faqs): Frequently asked questions about ContinuumDAO, CTM, MPC, and the MPA wallet
 - [Staking](${SITE_URL}/staking): veCTM staking information
 - [MPC Network](${SITE_URL}/mpc-network): MPC network overview
-- [Multi-Party Agent Wallet](https://mpa.continuumdao.org/node-map): AI-first MPC wallet application
+- [Multi-Party Agent Wallet](https://mpa.continuumdao.org/node-map): AI-first MPC wallet — click **+** to install a node
+- [Install guide (docs)](${DOCS_URL}/ContinuumDAO/MPAWallet/Install): Canonical install paths for VPS and home PC
+- [install-node.json](${SITE_URL}/well-known/install-node.json): Machine-readable install routing for AI agents
 
 ## Apps and community
 
