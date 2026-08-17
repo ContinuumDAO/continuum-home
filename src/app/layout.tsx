@@ -59,6 +59,10 @@ export const metadata: Metadata = {
       'application/json': `${SITE_URL}/well-known/llm-index.json`,
     },
   },
+  icons: {
+    icon: [{ url: '/icon.png', type: 'image/png' }],
+    apple: [{ url: '/icon.png', type: 'image/png' }],
+  },
 }
 
 const organizationJsonLd = {
