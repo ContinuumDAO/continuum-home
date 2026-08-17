@@ -38,6 +38,7 @@ If pushes still do not deploy:
 4. Or use Command Palette → **Deploy Latest Commit** for a one-off deploy.
 
 Build/start commands are defined in `railway.toml` (`npm run build`, `npm start`).
+Railway uses the `Dockerfile` when present (static export served with `serve` on `$PORT`).
 
 ## License
 
