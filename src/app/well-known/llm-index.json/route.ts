@@ -1,4 +1,5 @@
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://continuumdao.org'
+const DOCS_URL = 'https://docs.continuumdao.org'
 
 const llmIndex = {
   '@context': [
@@ -8,7 +9,7 @@ const llmIndex = {
   '@type': 'llmld:AIWebsite',
   'llmld:summary': {
     one_liner:
-      'ContinuumDAO is a DAO that runs a public permissionlessdecentralized Multi-Party Computation (MPC) network for cross-chain messaging, AI agentic wallets and cross-chaingovernance.',
+      'ContinuumDAO is a DAO that runs a public permissionless decentralized Multi-Party Computation (MPC) network for cross-chain messaging, AI agentic wallets and cross-chain governance.',
     key_facts: [
       'Governance and minting are 100% on-chain and vote-based.',
       'MPC network is permissionless; anyone can run a node, create Multi-Party Agent Wallets and earn CTM rewards.',
@@ -20,13 +21,21 @@ const llmIndex = {
   'llmld:actions': {
     primary: [
       { name: 'FAQs', url: `${SITE_URL}/faqs` },
-      { name: 'Docs', url: 'https://docs.continuumdao.org/' },
       { name: 'Vote / Governance', url: 'https://app.continuumdao.org/governance' },
       { name: 'Forum', url: 'https://forum.continuumdao.org/' },
       { name: 'Staking', url: `${SITE_URL}/staking` },
       { name: 'MPC Network', url: `${SITE_URL}/mpc-network` },
       { name: 'Multi-Party Agent Wallet', url: 'https://mpa.continuumdao.org/node-map' },
     ],
+  },
+  'llmld:documentation': {
+    note: 'Full documentation is auto-indexed on the docs site. Do not mirror page lists here — fetch the live index.',
+    llmsTxt: `${DOCS_URL}/llms.txt`,
+    llmIndex: `${DOCS_URL}/well-known/llm-index.json`,
+    searchIndex: `${DOCS_URL}/search-index.json`,
+    sitemap: `${DOCS_URL}/sitemap.xml`,
+    baseUrl: `${DOCS_URL}/`,
+    markdownSuffix: '.md',
   },
 }
 

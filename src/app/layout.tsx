@@ -10,6 +10,7 @@ function getSiteUrl(): string {
 }
 
 const SITE_URL = getSiteUrl()
+const DOCS_URL = 'https://docs.continuumdao.org'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -52,6 +53,11 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    types: {
+      'application/json': `${SITE_URL}/well-known/llm-index.json`,
+    },
   },
 }
 
@@ -110,6 +116,18 @@ export default function RootLayout({
       )}
     >
       <body className="flex min-h-screen flex-col bg-black text-white">
+        <link
+          rel="alternate"
+          type="application/json"
+          href={`${SITE_URL}/well-known/llm-index.json`}
+          title="LLM Discovery Index"
+        />
+        <link
+          rel="alternate"
+          type="text/plain"
+          href={`${DOCS_URL}/llms.txt`}
+          title="ContinuumDAO Documentation (llms.txt)"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
