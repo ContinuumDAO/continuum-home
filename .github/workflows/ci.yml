@@ -32,13 +32,21 @@ jobs:
     steps:
       - name: Trigger Railway deployment
         env:
-          RAILWAY_DEPLOY_HOOK_URL: ${{ secrets.RAILWAY_DEPLOY_HOOK_URL }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
+          RAILWAY_ENVIRONMENT_ID: ${{ secrets.RAILWAY_ENVIRONMENT_ID }}
         run: |
-          if [ -z "$RAILWAY_DEPLOY_HOOK_URL" ]; then
-            echo "::error::Missing GitHub secret RAILWAY_DEPLOY_HOOK_URL."
-            echo "Railway → continuum-home → Settings → Deploy → Deploy Hook → copy URL"
-            echo "GitHub → continuum-home → Settings → Secrets → Actions → New repository secret"
-            exit 1
+          if [ -z "$RAILWAY_TOKEN" ] || [ -z "$RAILWAY_SERVICE_ID" ] || [ -z "$RAILWAY_ENVIRONMENT_ID" ]; then
+            echo "::warning::Skipping Railway deploy — set GitHub secrets RAILWAY_TOKEN, RAILWAY_SERVICE_ID, RAILWAY_ENVIRONMENT_ID."
+            exit 0
           fi
-          curl -fsS -X POST "$RAILWAY_DEPLOY_HOOK_URL"
-          echo "Railway deploy triggered."
+          payload=$(jq -n \
+            --arg serviceId "$RAILWAY_SERVICE_ID" \
+            --arg environmentId "$RAILWAY_ENVIRONMENT_ID" \
+            --arg commitSha "${{ github.sha }}" \
+            '{query:"mutation($serviceId:String!,$environmentId:String!,$commitSha:String){serviceInstanceDeployV2(serviceId:$serviceId,environmentId:$environmentId,commitSha:$commitSha)}",variables:{serviceId:$serviceId,environmentId:$environmentId,commitSha:$commitSha}}')
+          curl -fsS https://backboard.railway.com/graphql/v2 \
+            -H "Authorization: Bearer $RAILWAY_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$payload"
+          echo "Railway deploy triggered for commit ${{ github.sha }}."

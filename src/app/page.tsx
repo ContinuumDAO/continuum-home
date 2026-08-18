@@ -42,6 +42,7 @@ export default function Home() {
               </p>
               <ol className="list-decimal list-inside space-y-2 pl-2">
                 <li>When locked in escrow in veCTM for up to 4 years, these veCTM can be used for voting.</li>
+                <li>A Multi-Party Agent wallet node can stake veCTM to avoid basic wallet usage fees (Stake to subscribe).</li>
                 <li>When an MPC node runner attaches their veCTM to a node in an MPC signer, they earn payment in CTM for providing the MPC service. The CTM used for rewards must be minted through Governance voting.</li>
                 <li>CTM can optionally be used for discounted payment for C3Caller cross-chain messaging rather than USD stablecoin payments.</li>
               </ol>

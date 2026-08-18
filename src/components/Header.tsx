@@ -36,8 +36,12 @@ const ourToken = [
   { name: 'Metrics', href: 'https://app.continuumdao.org/metrics' },
 ]
 
+const mpaWalletMenu = [
+  { name: 'Create a new wallet', href: 'https://mpa.continuumdao.org/node-map' },
+  { name: 'MPA wallet docs', href: 'https://docs.continuumdao.org/ContinuumDAO/MPAWallet/Overview' },
+]
+
 const mpcMenu = [
-  { name: 'Multi-Party Agent Wallet', href: 'https://mpa.continuumdao.org/node-map' },
   { name: 'What is MPC?', href: 'https://docs.continuumdao.org/ContinuumDAO/MPC/WhatIsMPC' },
   { name: 'Our MPC Network', href: '/mpc-network' },
 ]
@@ -65,6 +69,7 @@ export function Header() {
   const buttonRef4 = useRef<HTMLButtonElement>(null)
   const buttonRef5 = useRef<HTMLButtonElement>(null)
   const buttonRef6 = useRef<HTMLButtonElement>(null)
+  const buttonRef7 = useRef<HTMLButtonElement>(null)
   const timeoutDuration = 200
   let timeout: ReturnType<typeof setTimeout>
 
@@ -74,6 +79,7 @@ export function Header() {
   const closePopover4 = () => buttonRef4.current?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }))
   const closePopover5 = () => buttonRef5.current?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }))
   const closePopover6 = () => buttonRef6.current?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }))
+  const closePopover7 = () => buttonRef7.current?.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }))
 
   const onMouseEnter = (open: boolean) => { clearTimeout(timeout); if (!open) buttonRef.current?.click() }
   const onMouseEnter2 = (open: boolean) => { clearTimeout(timeout); if (!open) buttonRef2.current?.click() }
@@ -81,6 +87,7 @@ export function Header() {
   const onMouseEnter4 = (open: boolean) => { clearTimeout(timeout); if (!open) buttonRef4.current?.click() }
   const onMouseEnter5 = (open: boolean) => { clearTimeout(timeout); if (!open) buttonRef5.current?.click() }
   const onMouseEnter6 = (open: boolean) => { clearTimeout(timeout); if (!open) buttonRef6.current?.click() }
+  const onMouseEnter7 = (open: boolean) => { clearTimeout(timeout); if (!open) buttonRef7.current?.click() }
 
   const onMouseLeave = (open: boolean) => { if (open) timeout = setTimeout(closePopover, timeoutDuration) }
   const onMouseLeave2 = (open: boolean) => { if (open) timeout = setTimeout(closePopover2, timeoutDuration) }
@@ -88,6 +95,7 @@ export function Header() {
   const onMouseLeave4 = (open: boolean) => { if (open) timeout = setTimeout(closePopover4, timeoutDuration) }
   const onMouseLeave5 = (open: boolean) => { if (open) timeout = setTimeout(closePopover5, timeoutDuration) }
   const onMouseLeave6 = (open: boolean) => { if (open) timeout = setTimeout(closePopover6, timeoutDuration) }
+  const onMouseLeave7 = (open: boolean) => { if (open) timeout = setTimeout(closePopover7, timeoutDuration) }
 
   return (
     <header
@@ -189,6 +197,31 @@ export function Header() {
                           <div key={item.name} className="relative flex items-center gap-x-6 p-4 text-sm leading-6">
                             <a onClick={() => close()} href={item.href} {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="block font-semibold text-white">{item.name}</a>
                             {i !== ourToken.length - 1 && <div className="absolute bottom-0 left-0 h-0.5 w-full -translate-x-1/2 scale-x-0 transform animate-grow-border bg-white/30" />}
+                          </div>
+                        ))}
+                      </div>
+                    </Popover.Panel>
+                  </Transition>
+                </div>
+              </>
+            )}
+          </Popover>
+          <div className="hidden min-h-[2.2rem] w-[1px] bg-white/30 lg:inline-block" />
+          <Popover className="relative">
+            {({ open, close }: { open: boolean; close: () => void }) => (
+              <>
+                <div>
+                  <Popover.Button ref={buttonRef7} onMouseEnter={() => onMouseEnter7(open)} onMouseLeave={() => onMouseLeave7(open)} className="custom-link group relative px-8 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:text-sm xl:text-lg 2xl:text-left">
+                    <span className="flex items-center gap-x-1">Multi-Party Agent wallet <ChevronDownIcon className="h-5 w-5 flex-none text-white group-hover:rotate-180 group-hover:duration-500" aria-hidden /></span>
+                    <span className="block h-0.5 max-w-0 bg-white/70 transition-all duration-500 group-hover:max-w-full" />
+                  </Popover.Button>
+                  <Transition as={Fragment} enter="transition ease-out duration-200" enterFrom="opacity-0" enterTo="opacity-100" leave="transition ease-in duration-150" leaveFrom="opacity-100" leaveTo="opacity-0">
+                    <Popover.Panel className="absolute left-0 top-full z-10 mt-2 w-56 overflow-hidden rounded-lg bg-[#171717] shadow-lg ring-1 ring-white/30" onMouseEnter={() => onMouseEnter7(open)} onMouseLeave={() => onMouseLeave7(open)}>
+                      <div className="px-4 py-2">
+                        {mpaWalletMenu.map((item, i) => (
+                          <div key={item.name} className="relative flex items-center gap-x-6 p-4 text-sm leading-6">
+                            <a onClick={() => close()} href={item.href} target="_blank" rel="noopener noreferrer" className="block font-semibold text-white">{item.name}</a>
+                            {i !== mpaWalletMenu.length - 1 && <div className="absolute bottom-0 left-0 h-0.5 w-full -translate-x-1/2 scale-x-0 transform animate-grow-border bg-white/30" />}
                           </div>
                         ))}
                       </div>
@@ -391,6 +424,34 @@ export function Header() {
                             as="a"
                             href={item.href}
                             {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-white/10"
+                          >
+                            {item.name}
+                          </Disclosure.Button>
+                        ))}
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+                <Disclosure as="div" className="-mx-3">
+                  {({ open }: { open: boolean }) => (
+                    <>
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-white/10">
+                        Multi-Party Agent wallet
+                        <ChevronDownIcon
+                          className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
+                          aria-hidden="true"
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="mt-2 space-y-2">
+                        {mpaWalletMenu.map((item) => (
+                          <Disclosure.Button
+                            key={item.name}
+                            as="a"
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={() => setMobileMenuOpen(false)}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-white/10"
                           >

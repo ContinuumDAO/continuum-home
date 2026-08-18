@@ -28,25 +28,34 @@ This site is a static Next.js export (`out/`) served with `serve`.
 
 ### Automatic deploy on push
 
-GitHub Actions builds on every push to `main`, then triggers Railway via a **deploy hook**
-(see `.github/workflows/ci.yml`). This is more reliable than Railway's GitHub webhook alone.
+Railway should autodeploy when you push to `main`. If GitHub webhooks are degraded,
+use one of the manual options below or set up GitHub Actions → Railway API deploy.
 
-**One-time setup** (required):
+**Optional CI deploy (bypasses flaky GitHub → Railway webhooks):**
 
-1. Railway → **continuum-home** → **Settings** → **Deploy** → **Deploy Hook** → copy the URL
-2. GitHub → **ContinuumDAO/continuum-home** → **Settings** → **Secrets and variables** → **Actions**
-3. Add secret: `RAILWAY_DEPLOY_HOOK_URL` = the deploy hook URL
+1. Railway → **continuum-home** → **Settings** → **Tokens** → create a **project token**
+2. Press **`Ctrl+K`** on the project canvas → search **Copy Service ID** and **Copy Environment ID**
+3. GitHub → **ContinuumDAO/continuum-home** → **Settings** → **Secrets and variables** → **Actions**
+4. Add secrets:
+   - `RAILWAY_TOKEN` — project token
+   - `RAILWAY_SERVICE_ID` — service ID
+   - `RAILWAY_ENVIRONMENT_ID` — environment ID (usually `production`)
 
-After that, every `git push` to `main` builds in GitHub Actions and triggers Railway.
+After that, every push runs CI and calls Railway's GraphQL API to deploy `${{ github.sha }}`.
 
-Railway also has autodeploy on `main` enabled; if that webhook misses a push, the deploy hook
-from CI still deploys. Check **Watch paths** in Railway service settings — leave empty or include
-`Dockerfile`, `src/**`, `.github/**`, and `package.json`.
+**Manual deploy (no secrets):**
+
+1. Open the **project canvas** (graph view), not inside a settings panel
+2. Press **`Ctrl+K`** (Linux/Windows) or **`Cmd+K`** (Mac)
+3. Type **`deploy`** → choose **Deploy Latest Commit** if it appears
+4. Or: **Settings** → **Source** → **Disconnect** → **Connect Repo** again (same repo/branch)
+5. Or: **Deployments** tab → **⋯** on the failed deploy → **Redeploy** only rebuilds that *same* commit; for latest code use option 3 or push again once GitHub webhooks are healthy
+
+Note: Railway **Webhooks** (project Settings → Webhooks) are *outbound notifications only* —
+they tell your app when a deploy finished; they do not trigger deploys.
 
 Build/start commands are defined in `railway.toml`. Railway uses the `Dockerfile` when present
 (static export served with `serve` on `$PORT`).
-
-**Manual deploy:** Railway Command Palette → **Deploy Latest Commit**
 
 ## License
 
