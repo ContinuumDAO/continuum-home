@@ -38,6 +38,7 @@ const ourToken = [
 
 const mpaWalletMenu = [
   { name: 'Create a new wallet', href: 'https://mpa.continuumdao.org/node-map' },
+  { name: 'Private VPN', href: 'https://docs.continuumdao.org/ContinuumDAO/PrivateVPN' },
   { name: 'MPA wallet docs', href: 'https://docs.continuumdao.org/ContinuumDAO/MPAWallet/Overview' },
 ]
 

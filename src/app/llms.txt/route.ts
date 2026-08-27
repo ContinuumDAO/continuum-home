@@ -15,6 +15,7 @@ ${buildInstallLlmsTxtSection(SITE_URL)}
 - [Staking](${SITE_URL}/staking): veCTM staking information
 - [MPC Network](${SITE_URL}/mpc-network): MPC network overview
 - [Multi-Party Agent Wallet](https://mpa.continuumdao.org/node-map): AI-first MPC wallet — click **+** to install a node
+- [Private VPN (docs)](${DOCS_URL}/ContinuumDAO/PrivateVPN): WireGuard through your node — veCTM-gated; AI agent and client setup
 - [Install guide (docs)](${DOCS_URL}/ContinuumDAO/MPAWallet/Install): Canonical install paths for VPS and home PC
 - [install-node.json](${SITE_URL}/well-known/install-node.json): Machine-readable install routing for AI agents
 

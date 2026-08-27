@@ -1,5 +1,25 @@
 const DOCS_URL = 'https://docs.continuumdao.org'
 const MPA_NODE_MAP = 'https://mpa.continuumdao.org/node-map'
+const PRIVATE_VPN_DOC = `${DOCS_URL}/ContinuumDAO/PrivateVPN.md`
+const PRIVATE_VPN_URL = `${DOCS_URL}/ContinuumDAO/PrivateVPN`
+
+/** veCTM-gated WireGuard VPN — canonical doc for AI crawlers. */
+export const privateVpnDiscovery = {
+  task: 'private-vpn',
+  summary:
+    'Enable Private VPN on an MPA node: attach veCTM at the governance voting-power threshold, enable WireGuard on the node, download client configs (optional obfuscation). Not a separate paid subscription.',
+  canonicalDoc: PRIVATE_VPN_DOC,
+  canonicalDocUrl: PRIVATE_VPN_URL,
+  keywords: [
+    'private vpn',
+    'wireguard',
+    'veCTM',
+    'vpn',
+    'shadowsocks',
+    'egress',
+    'vpn mcp',
+  ],
+} as const
 
 /** Machine-readable install routing for external AI agents. */
 export const installNodeDiscovery = {
@@ -90,12 +110,18 @@ export const installNodeDiscovery = {
       name: 'Optional: configure the built-in AI harness',
       url: `${DOCS_URL}/ContinuumDAO/MPAWallet/AIHarness/Configure.md`,
     },
+    {
+      step: 'private-vpn',
+      name: 'Optional: Private VPN (requires attached veCTM at voting-power threshold)',
+      url: PRIVATE_VPN_DOC,
+    },
   ],
   keyFacts: [
     'One node alone cannot create a shared wallet address — add at least one peer (typical personal setup: 2/2 human-in-the-loop).',
     'For almost all human users, start at the node map + button; do not default to manual git clone.',
     'AI agents provisioning Ubuntu/Debian VPS should use the one-shot script, not NodeRunningInstruction.md.',
     'Home PCs need Docker Desktop plus the Continuum Node extension, public WAN IP, and router port forwarding.',
+    `Private VPN (WireGuard through your node): ${PRIVATE_VPN_URL} — veCTM privilege, not a Linea subscription; see docs for MCP vpn tools and client setup.`,
   ],
 } as const
 
@@ -130,8 +156,11 @@ export function buildInstallLlmsTxtSection(siteUrl: string): string {
 | macOS home PC | [Install.md](${d.canonicalDoc}) + [macOS Docker Desktop guide](${d.routes[2].guide}) |
 | Linux home PC / laptop | [Install.md](${d.canonicalDoc}) or node-map + button |
 | Advanced / manual shell only | [NodeRunningInstruction.md](${d.avoidForAgents}) — **not** the default |
+| Private VPN on your node (veCTM required) | [Private VPN](${PRIVATE_VPN_URL}) |
 
 **After one node is running:** user still needs a second peer, Group, and KeyGen (minimum 2/2) — see [Post install steps](${d.canonicalDoc}#post-install-steps).
+
+**Private VPN:** [Private VPN docs](${PRIVATE_VPN_URL}) — WireGuard through your node; requires attached veCTM at the governance voting-power threshold (not a separate subscription).
 
 **Home network:** forward TCP **18080** (discovery); **8883** if this machine is the relay — [port forwarding guide](${d.homeNetwork.portForwardGuide}).
 

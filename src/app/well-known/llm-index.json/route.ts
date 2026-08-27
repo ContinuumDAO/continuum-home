@@ -1,4 +1,4 @@
-import { llmldGetStarted } from '@/lib/install-node-discovery'
+import { llmldGetStarted, privateVpnDiscovery } from '@/lib/install-node-discovery'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://continuumdao.org'
 const DOCS_URL = 'https://docs.continuumdao.org'
@@ -19,9 +19,11 @@ const llmIndex = {
       'C3Caller provides cross-chain messaging; C3Governor extends governance across chains.',
       'Multi-Party Agent Wallet supports human-in-the-loop and AI agentic signing.',
       'Install an MPA node from the node map (+ button) on VPS or home PC (Windows 11, macOS, Linux); one node is not enough for a wallet — add peers, a Group, and a KeyGen.',
+      `Private VPN on MPA nodes: ${DOCS_URL}/ContinuumDAO/PrivateVPN — veCTM-gated WireGuard through your node; not a separate paid subscription.`,
     ],
   },
   'llmld:getStarted': llmldGetStarted(SITE_URL),
+  'llmld:agentTasks': [privateVpnDiscovery],
   'llmld:actions': {
     primary: [
       {
@@ -33,6 +35,12 @@ const llmIndex = {
       {
         name: 'Install guide (docs)',
         url: `${DOCS_URL}/ContinuumDAO/MPAWallet/Install`,
+      },
+      {
+        name: 'Private VPN (docs)',
+        url: `${DOCS_URL}/ContinuumDAO/PrivateVPN`,
+        description:
+          'WireGuard VPN through your MPA node; veCTM-gated. Enable on the node, download client configs, optional peer egress sharing.',
       },
       { name: 'FAQs', url: `${SITE_URL}/faqs` },
       { name: 'Vote / Governance', url: 'https://app.continuumdao.org/governance' },
