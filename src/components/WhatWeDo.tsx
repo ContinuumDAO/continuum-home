@@ -16,11 +16,17 @@ export function WhatWeDo() {
               <p className="font-bold tracking-tight text-white xxs:text-4xl xs:text-5xl">
               ContinuumDAO
               </p>
-              <p className="mt-10 font-medium leading-8 text-white xxs:text-2xl sm:text-3xl whitespace-nowrap">
-              Permissionless service <span className="font-extrabold">•</span> Autonomous operation <span className="font-extrabold">•</span> Programable MPC functions <span className="font-extrabold">•</span> Unlimited node scaling
+              <p className="mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-medium leading-snug text-white xxs:text-2xl sm:text-3xl lg:justify-start lg:text-2xl xl:text-3xl">
+                <span className="whitespace-nowrap">Permissionless service</span>
+                <span className="font-extrabold" aria-hidden="true">•</span>
+                <span className="whitespace-nowrap">AI first harness operation</span>
+                <span className="font-extrabold" aria-hidden="true">•</span>
+                <span className="whitespace-nowrap">Private Keyless MPC</span>
+                <span className="font-extrabold" aria-hidden="true">•</span>
+                <span className="whitespace-nowrap">AI node-to-node expansion</span>
               </p>
               <p className="mt-10 font-light leading-8 text-gray-300 xs:text-xl sm:text-2xl xl:pr-24">
-              Continuum is a decentralized Multi-Party Computation network designed to serve as a public good and run by a DAO. Anyone can run a node, join an MPC signer pool and earn rewards. Our products include:<br/><br/><span className="font-bold text-white">C3Caller</span> for seamless integration of dApps across blockchains with MPC message-passing<br/><br/><span className="font-bold text-white">Multi-Party Agent Wallet</span> for human-in-the-loop transactions, designed for AI agents with ContinuumDAO&apos;s custom harness<br/><br/><span className="font-bold text-white">C3Governor</span> for Cross-chain and On-chain Governance, extending Open Zeppelin&apos;s Governor functionality for multi-option and multi-chain governance<br/><br/><span className="font-bold text-white">Private VPN</span>. Multi-Party Agent nodes come equipped with their own VPN exits, which can be shared with other configured nodes. Egress is shielded for maximum privacy
+              Continuum is a decentralized Multi-Party Computation network designed to serve as a public good and run by a DAO. Anyone, or any AI can run a node, manage assets, or join the network. Our products include:<br/><br/><span className="font-bold text-white">C3Caller</span> for seamless integration of dApps across blockchains with MPC message-passing<br/><br/><span className="font-bold text-white">Multi-Party Agent Wallet</span> for human-in-the-loop transactions, designed for AI agents with ContinuumDAO&apos;s custom harness<br/><br/><span className="font-bold text-white">C3Governor</span> for Cross-chain and On-chain Governance, extending Open Zeppelin&apos;s Governor functionality for multi-option and multi-chain governance<br/><br/><span className="font-bold text-white">Private VPN</span>. Multi-Party Agent nodes come equipped with their own VPN exits, which can be shared with other configured nodes. Egress is shielded for maximum privacy
               </p>
               <div className="mt-10 flex xs:justify-center lg:justify-start">
                 <a

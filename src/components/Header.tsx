@@ -106,16 +106,16 @@ export function Header() {
         className="mx-auto flex max-w-[110rem] items-center justify-between border-b border-t border-white/30 px-8"
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
-          <a href="#" className="p-1.5 lg:-mx-8">
+        <div className="flex shrink-0">
+          <a href="#" className="p-1.5">
             <span className="sr-only">Continuum</span>
-            <div className="flex flex-row items-center xxs:-ml-4 md:ml-0 lg:ml-10 xl:ml-0">
+            <div className="flex flex-row items-center xxs:-ml-4 md:ml-0">
               <Image
-                className="-mr-4 max-w-auto scale-[0.6] pt-1.5 lg:scale-[0.5] w-[76px]"
+                className="h-9 w-9 shrink-0"
                 src={Logo}
                 alt="Logo"
               />
-              <span className="hidden pl-3 pt-0.5 font-sans font-semibold text-white xl:inline xl:text-2xl 2xl:text-3xl">
+              <span className="hidden whitespace-nowrap pl-2 pt-0.5 font-sans font-semibold text-white xl:inline xl:text-xl 2xl:text-2xl">
                 Continuum
               </span>
             </div>
@@ -132,12 +132,12 @@ export function Header() {
           </button>
         </div>
 
-        <Popover.Group className="hidden items-center lg:flex">
+        <Popover.Group className="hidden min-w-0 items-center lg:flex lg:flex-1 lg:justify-end">
           <Popover className="relative">
             {({ open, close }: { open: boolean; close: () => void }) => (
               <>
                 <div>
-                  <Popover.Button ref={buttonRef} onMouseEnter={() => onMouseEnter(open)} onMouseLeave={() => onMouseLeave(open)} className="custom-link group relative px-8 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:text-sm xl:text-lg 2xl:text-left">
+                  <Popover.Button ref={buttonRef} onMouseEnter={() => onMouseEnter(open)} onMouseLeave={() => onMouseLeave(open)} className="custom-link group relative whitespace-nowrap px-2 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:px-2 lg:text-sm xl:px-2 xl:text-sm 2xl:px-6 2xl:text-lg">
                     <span className="flex items-center gap-x-1">Use Cases <ChevronDownIcon className="h-5 w-5 flex-none text-white group-hover:rotate-180 group-hover:duration-500" aria-hidden /></span>
                     <span className="block h-0.5 max-w-0 bg-white/70 transition-all duration-500 group-hover:max-w-full" />
                   </Popover.Button>
@@ -162,7 +162,7 @@ export function Header() {
             {({ open, close }: { open: boolean; close: () => void }) => (
               <>
                 <div>
-                  <Popover.Button ref={buttonRef2} onMouseEnter={() => onMouseEnter2(open)} onMouseLeave={() => onMouseLeave2(open)} className="custom-link group relative px-8 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:text-sm xl:text-lg 2xl:text-left">
+                  <Popover.Button ref={buttonRef2} onMouseEnter={() => onMouseEnter2(open)} onMouseLeave={() => onMouseLeave2(open)} className="custom-link group relative whitespace-nowrap px-2 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:px-2 lg:text-sm xl:px-2 xl:text-sm 2xl:px-6 2xl:text-lg">
                     <span className="flex items-center gap-x-1">Governance <ChevronDownIcon className="h-5 w-5 flex-none text-white group-hover:rotate-180 group-hover:duration-500" aria-hidden /></span>
                     <span className="block h-0.5 max-w-0 bg-white/70 transition-all duration-500 group-hover:max-w-full" />
                   </Popover.Button>
@@ -187,7 +187,7 @@ export function Header() {
             {({ open, close }: { open: boolean; close: () => void }) => (
               <>
                 <div>
-                  <Popover.Button ref={buttonRef3} onMouseEnter={() => onMouseEnter3(open)} onMouseLeave={() => onMouseLeave3(open)} className="custom-link group relative px-8 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:text-sm xl:text-lg 2xl:text-left">
+                  <Popover.Button ref={buttonRef3} onMouseEnter={() => onMouseEnter3(open)} onMouseLeave={() => onMouseLeave3(open)} className="custom-link group relative whitespace-nowrap px-2 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:px-2 lg:text-sm xl:px-2 xl:text-sm 2xl:px-6 2xl:text-lg">
                     <span className="flex items-center gap-x-1">Our Token <ChevronDownIcon className="h-5 w-5 flex-none text-white group-hover:rotate-180 group-hover:duration-500" aria-hidden /></span>
                     <span className="block h-0.5 max-w-0 bg-white/70 transition-all duration-500 group-hover:max-w-full" />
                   </Popover.Button>
@@ -212,7 +212,7 @@ export function Header() {
             {({ open, close }: { open: boolean; close: () => void }) => (
               <>
                 <div>
-                  <Popover.Button ref={buttonRef7} onMouseEnter={() => onMouseEnter7(open)} onMouseLeave={() => onMouseLeave7(open)} className="custom-link group relative px-8 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:text-sm xl:text-lg 2xl:text-left">
+                  <Popover.Button ref={buttonRef7} onMouseEnter={() => onMouseEnter7(open)} onMouseLeave={() => onMouseLeave7(open)} className="custom-link group relative whitespace-nowrap px-2 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:px-2 lg:text-sm xl:px-2 xl:text-sm 2xl:px-6 2xl:text-lg">
                     <span className="flex items-center gap-x-1">Multi-Party Agent wallet <ChevronDownIcon className="h-5 w-5 flex-none text-white group-hover:rotate-180 group-hover:duration-500" aria-hidden /></span>
                     <span className="block h-0.5 max-w-0 bg-white/70 transition-all duration-500 group-hover:max-w-full" />
                   </Popover.Button>
@@ -237,7 +237,7 @@ export function Header() {
             {({ open, close }: { open: boolean; close: () => void }) => (
               <>
                 <div>
-                  <Popover.Button ref={buttonRef6} onMouseEnter={() => onMouseEnter6(open)} onMouseLeave={() => onMouseLeave6(open)} className="custom-link group relative px-8 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:text-sm xl:text-lg 2xl:text-left">
+                  <Popover.Button ref={buttonRef6} onMouseEnter={() => onMouseEnter6(open)} onMouseLeave={() => onMouseLeave6(open)} className="custom-link group relative whitespace-nowrap px-2 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:px-2 lg:text-sm xl:px-2 xl:text-sm 2xl:px-6 2xl:text-lg">
                     <span className="flex items-center gap-x-1">MPC <ChevronDownIcon className="h-5 w-5 flex-none text-white group-hover:rotate-180 group-hover:duration-500" aria-hidden /></span>
                     <span className="block h-0.5 max-w-0 bg-white/70 transition-all duration-500 group-hover:max-w-full" />
                   </Popover.Button>
@@ -262,7 +262,7 @@ export function Header() {
             {({ open, close }: { open: boolean; close: () => void }) => (
               <>
                 <div>
-                  <Popover.Button ref={buttonRef4} onMouseEnter={() => onMouseEnter4(open)} onMouseLeave={() => onMouseLeave4(open)} className="custom-link group relative px-8 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:text-sm xl:text-lg 2xl:text-left">
+                  <Popover.Button ref={buttonRef4} onMouseEnter={() => onMouseEnter4(open)} onMouseLeave={() => onMouseLeave4(open)} className="custom-link group relative whitespace-nowrap px-2 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:px-2 lg:text-sm xl:px-2 xl:text-sm 2xl:px-6 2xl:text-lg">
                     <span className="flex items-center gap-x-1">Contact Us <ChevronDownIcon className="h-5 w-5 flex-none text-white group-hover:rotate-180 group-hover:duration-500" aria-hidden /></span>
                     <span className="block h-0.5 max-w-0 bg-white/70 transition-all duration-500 group-hover:max-w-full" />
                   </Popover.Button>
@@ -287,7 +287,7 @@ export function Header() {
             {({ open, close }: { open: boolean; close: () => void }) => (
               <>
                 <div>
-                  <Popover.Button ref={buttonRef5} onMouseEnter={() => onMouseEnter5(open)} onMouseLeave={() => onMouseLeave5(open)} className="custom-link group relative px-8 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:text-sm xl:text-lg 2xl:text-left">
+                  <Popover.Button ref={buttonRef5} onMouseEnter={() => onMouseEnter5(open)} onMouseLeave={() => onMouseLeave5(open)} className="custom-link group relative whitespace-nowrap px-2 py-8 text-center font-medium leading-6 text-white focus:outline-none lg:px-2 lg:text-sm xl:px-2 xl:text-sm 2xl:px-6 2xl:text-lg">
                     <span className="flex items-center gap-x-1">Learn More <ChevronDownIcon className="h-5 w-5 flex-none text-white group-hover:rotate-180 group-hover:duration-500" aria-hidden /></span>
                     <span className="block h-0.5 max-w-0 bg-white/70 transition-all duration-500 group-hover:max-w-full" />
                   </Popover.Button>
