@@ -119,6 +119,17 @@ export function Hero() {
                   <span className="link-bg"></span>
                 </a>
               </div>
+              <p className="mx-auto mt-8 max-w-3xl text-lg font-semibold leading-relaxed text-orange-400 sm:text-xl md:text-2xl">
+                Multi-Party Agent Wallet has a free trial this month. Ask your agent to install ContinuumDAO&apos;s MPA wallet, or install manually{' '}
+                <a
+                  href="https://mpa.continuumdao.org/node-map"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-2 underline-offset-4 hover:text-orange-300"
+                >
+                  here
+                </a>.
+              </p>
               {showEscrowBox && (
                 <div className="mt-10 mx-auto max-w-3xl rounded-2xl border-4 border-white px-6 py-8 sm:px-10 sm:py-10 text-center">
                   <p className="text-white text-lg sm:text-xl md:text-2xl font-medium leading-relaxed">

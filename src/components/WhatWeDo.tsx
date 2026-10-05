@@ -24,7 +24,7 @@ export function WhatWeDo() {
               </p>
               <div className="mt-10 flex xs:justify-center lg:justify-start">
                 <a
-                  href="https://docs.continuumdao.org/ContinuumDAO/WhitePaper"
+                  href="https://docs.continuumdao.org/#/ContinuumDAO/WhitePaper"
                   className="backdrop-blur-[2px] link relative overflow-hidden border border-white py-4 text-base font-semibold leading-6 text-white xxs:px-8 xs:px-10"
                 >
                   Read Our Whitepaper <span aria-hidden="true">↗</span>

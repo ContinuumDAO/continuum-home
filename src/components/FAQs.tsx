@@ -68,15 +68,17 @@ export function FAQs() {
                       show={open}
                       enter="transition transition-[max-height] duration-300 ease-in"
                       enterFrom="transform max-h-0 opacity-0"
-                      enterTo="transform max-h-[500px] opacity-100"
+                      enterTo="transform max-h-[120rem] opacity-100"
                       leave="transition transition-[max-height] duration-200 ease-out"
-                      leaveFrom="transform max-h-[500px] opacity-100"
+                      leaveFrom="transform max-h-[120rem] opacity-100"
                       leaveTo="transform max-h-0 opacity-0"
                     >
                       <Disclosure.Panel as="dd" className="pb-4">
-                        <p className="text-base leading-7 text-gray-300 sm:text-lg pl-0 pr-8">
-                          {answerWithLinks(item.answer)}
-                        </p>
+                        <div className="space-y-4 text-base leading-7 text-gray-300 sm:text-lg pl-0 pr-8">
+                          {item.answer.split(/\n\n+/).map((paragraph, paragraphIndex) => (
+                            <p key={paragraphIndex}>{answerWithLinks(paragraph)}</p>
+                          ))}
+                        </div>
                       </Disclosure.Panel>
                     </Transition>
                     <div className="border-b border-white/70" />

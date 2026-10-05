@@ -202,7 +202,8 @@ export function Footer() {
               <a
                 key={item.name}
                 href={item.href}
-                target="_"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="h-4 w-4 text-white hover:text-white/75"
               >
                 <span className="sr-only">{item.name}</span>
@@ -211,6 +212,9 @@ export function Footer() {
             ))}
           </div>
         </div>
+        <p className="py-6 text-center text-sm text-white/70">
+          Copyright ContinuumDAO 2026
+        </p>
       </div>
     </div>
   )

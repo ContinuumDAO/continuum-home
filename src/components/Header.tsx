@@ -19,7 +19,7 @@ const governance = [
   { name: 'Vote', href: 'https://app.continuumdao.org/governance' },
   { name: 'Tokens in Escrow', href: 'https://app.continuumdao.org/escrow' },
   { name: 'Vote (legacy snapshot)', href: 'https://snapshot.org/#/continuumdao.eth' },
-  { name: 'Our Constitution', href: 'https://docs.continuumdao.org/ContinuumDAO/Governance/Constitution' },
+  { name: 'Our Constitution', href: 'https://docs.continuumdao.org/#/ContinuumDAO/Governance/Constitution' },
 ]
 
 const contactUs = [
@@ -38,18 +38,18 @@ const ourToken = [
 
 const mpaWalletMenu = [
   { name: 'Create a new wallet', href: 'https://mpa.continuumdao.org/node-map' },
-  { name: 'Private VPN', href: 'https://docs.continuumdao.org/ContinuumDAO/PrivateVPN' },
-  { name: 'MPA wallet docs', href: 'https://docs.continuumdao.org/ContinuumDAO/MPAWallet/Overview' },
+  { name: 'Private VPN', href: 'https://docs.continuumdao.org/#/ContinuumDAO/PrivateVPN' },
+  { name: 'MPA wallet docs', href: 'https://docs.continuumdao.org/#/ContinuumDAO/MPAWallet/Overview' },
 ]
 
 const mpcMenu = [
-  { name: 'What is MPC?', href: 'https://docs.continuumdao.org/ContinuumDAO/MPC/WhatIsMPC' },
+  { name: 'What is MPC?', href: 'https://docs.continuumdao.org/#/ContinuumDAO/MPC/WhatIsMPC' },
   { name: 'Our MPC Network', href: '/mpc-network' },
 ]
 
 const learnMore = [
   { name: 'Docs', href: 'https://docs.continuumdao.org/' },
-  { name: 'Whitepaper', href: 'https://docs.continuumdao.org/ContinuumDAO/WhitePaper' },
+  { name: 'Whitepaper', href: 'https://docs.continuumdao.org/#/ContinuumDAO/WhitePaper' },
   { name: 'FAQs', href: '/faqs' },
 ]
 
