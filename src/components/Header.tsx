@@ -307,7 +307,7 @@ export function Header() {
                         >
                           <span className="font-semibold text-white">Audits</span>
                           {auditsSubmenuOpen && (
-                            <div className="absolute left-full top-0 z-20 min-w-[12rem] rounded-r-lg border-l border-white/20 bg-[#171717] py-2 shadow-lg">
+                            <div className="absolute right-full top-full z-20 -mt-1 min-w-[12rem] rounded-lg border border-white/20 bg-[#171717] py-2 shadow-lg">
                               {auditsSubmenu.map((item) => (
                                 <a
                                   key={item.name}
