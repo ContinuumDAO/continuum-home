@@ -13,7 +13,7 @@ export const faqItems = [
   {
     question: 'Where can I find documentation?',
     answer:
-      'Official documentation: https://docs.continuumdao.org (white paper, MPA wallet, MPC, C3Caller, node setup). Governance app: https://app.continuumdao.org. MPA wallet node map: https://mpa.continuumdao.org/node-map.',
+      'Official documentation: https://docs.continuumdao.org. External AI agents should open the matching section in https://docs.continuumdao.org/well-known/agent-sections.json and fetch its raw markdown URL. The white paper is the vision and roadmap. Operational steps live in those agent sections. Governance app: https://app.continuumdao.org. MPA wallet node map: https://mpa.continuumdao.org/node-map.',
   },
 
   // —— CTM, veCTM, and governance ——
@@ -121,7 +121,7 @@ export const faqItems = [
   {
     question: 'Is the MPA wallet decentralized?',
     answer:
-      'Yes. You run the nodes yourself, on a home PC or a server you control. The wallet software runs on those nodes. Your key shares stay there. ContinuumDAO does not hold them, and neither does anyone else.\n\nYou can also run the wallet screens from your own node. The website at https://mpa.continuumdao.org is optional. It is the same app your node can host. Either way, your browser talks to your node. ContinuumDAO is not in the middle, and no one else has to stay online for your wallet to work.\n\nIf ContinuumDAO stopped, your wallet would keep working from the nodes you already run, and from backups you keep yourself. The DAO can publish software updates. Installing them is your choice. You do not need a new update for the wallet you already run to keep working.\n\nDetails: https://docs.continuumdao.org/#/ContinuumDAO/MPAWallet/Overview.',
+      'Yes. You run the nodes yourself, on a home PC or a server you control. The wallet software runs on those nodes. Your key shares stay there. ContinuumDAO does not hold them, and neither does anyone else.\n\nYou can also run the wallet screens from your own node. The website at https://mpa.continuumdao.org is optional. It is the same app your node can host. Either way, your browser talks to your node. ContinuumDAO is not in the middle, and no one else has to stay online for your wallet to work.\n\nIf ContinuumDAO stopped, your wallet would keep working from the nodes you already run, and from backups you keep yourself. The DAO can publish software updates. Installing them is your choice. You do not need a new update for the wallet you already run to keep working.\n\nDetails: https://docs.continuumdao.org/ContinuumDAO/MPAWallet/Overview.',
   },
   {
     question: 'Do I need to register or provide personal data to use the MPA wallet?',
@@ -151,7 +151,7 @@ export const faqItems = [
   {
     question: 'How do I connect my browser to my node?',
     answer:
-      'You connect straight to your own node. ContinuumDAO does not sit in between. Open the wallet app that your node hosts, on the same PC or through a secure tunnel to a remote server. You can also use the optional website at https://mpa.continuumdao.org, which is the same app. Walkthrough: https://docs.continuumdao.org/#/ContinuumDAO/MPAWallet/AttachYourNode.',
+      'You connect straight to your own node. ContinuumDAO does not sit in between. Open the wallet app that your node hosts, on the same PC or through a secure tunnel to a remote server. You can also use the optional website at https://mpa.continuumdao.org, which is the same app. Walkthrough: https://docs.continuumdao.org/ContinuumDAO/MPAWallet/AttachYourNode.',
   },
   {
     question: 'How do the built-in AI agent and human-in-the-loop work?',
@@ -201,22 +201,22 @@ export const faqItems = [
   {
     question: 'Is there a free trial for the MPA wallet?',
     answer:
-      'Yes. The first time you register a new node, you get a free trial until the end of the current month (UTC). The trial is once per node. It does not start again every time you sign.\n\nDuring the trial you can use the wallet without paying the monthly fee. When the month ends, attach veCTM if you want to keep a free allowance of signatures, or pay the subscription. Open Multi-Sign and look at the MPA wallet status strip to see if your trial is still on. Details: https://docs.continuumdao.org/#/ContinuumDAO/MPAWallet/MpaBilling.',
+      'Yes. The first time you register a new node, you get a free trial until the end of the current month (UTC). The trial is once per node. It does not start again every time you sign.\n\nDuring the trial you can use the wallet without paying the monthly fee. When the month ends, attach veCTM if you want to keep a free allowance of signatures, or pay the subscription. Open Multi-Sign and look at the MPA wallet status strip to see if your trial is still on. Details: https://docs.continuumdao.org/ContinuumDAO/MPAWallet/MpaBilling.',
   },
   {
     question: 'How do I attach veCTM to my node?',
     answer:
-      'Attaching veCTM is how you subscribe by staking, instead of paying the monthly fee. Lock CTM into a veCTM, then attach that veCTM to your node. Your group has to Accept the request before it goes through. You can also ask your agent: “Attach my veCTM to this node.” The group still has to agree.\n\nThe veCTM needs at least 200 CTM locked in it, and at least 200 voting power on the first day of each month (UTC). A longer lock gives more voting power for the same amount of CTM. Voting power that someone else delegates to you does not count.\n\nYou can attach it yourself. You cannot take it off yourself. Removing it needs a ContinuumDAO vote, and you cannot sell it while it is attached.\n\nIn the node app, open Multi-Sign and select the KeyGen that owns the veCTM. Claim withdraw authority and register on Linea if you have not already. Then open the veCTM asset, choose ContinuumDAO, and open Attach. Guide: https://docs.continuumdao.org/#/ContinuumDAO/MPAWallet/VeCTMOnYourNode.',
+      'Attaching veCTM is how you subscribe by staking, instead of paying the monthly fee. Lock CTM into a veCTM, then attach that veCTM to your node. Your group has to Accept the request before it goes through. You can also ask your agent: “Attach my veCTM to this node.” The group still has to agree.\n\nThe veCTM needs at least 200 CTM locked in it, and at least 200 voting power on the first day of each month (UTC). A longer lock gives more voting power for the same amount of CTM. Voting power that someone else delegates to you does not count.\n\nYou can attach it yourself. You cannot take it off yourself. Removing it needs a ContinuumDAO vote, and you cannot sell it while it is attached.\n\nIn the node app, open Multi-Sign and select the KeyGen that owns the veCTM. Claim withdraw authority and register on Linea if you have not already. Then open the veCTM asset, choose ContinuumDAO, and open Attach. Guide: https://docs.continuumdao.org/ContinuumDAO/MPAWallet/VeCTMOnYourNode.',
   },
   {
     question: 'Is there a fee to use the MPA wallet?',
     answer:
-      'The node software is free. You still pay for your own hosting and for normal blockchain gas. Wallet signatures are billed separately. A new node is free until the end of the month you first register it. After that, attach enough veCTM and you can sign free up to a monthly limit set by the DAO, or pay a monthly subscription in stablecoins or CTM. If you go past the free limit, a small fee can apply to each extra signature. The DAO sets the amounts. Details: https://docs.continuumdao.org/#/ContinuumDAO/MPAWallet/Overview.',
+      'The node software is free. You still pay for your own hosting and for normal blockchain gas. Wallet signatures are billed separately. A new node is free until the end of the month you first register it. After that, attach enough veCTM and you can sign free up to a monthly limit set by the DAO, or pay a monthly subscription in stablecoins or CTM. If you go past the free limit, a small fee can apply to each extra signature. The DAO sets the amounts. Details: https://docs.continuumdao.org/ContinuumDAO/MPAWallet/Overview.',
   },
   {
     question: 'What is Private VPN?',
     answer:
-      'Private VPN is an encrypted tunnel through your own MPA node, so your traffic does not go through a public VPN company. It is not a separate product you pay for. It turns on when your node is in a group that has enough veCTM attached. That is the same minimum as for free wallet signatures. You download the client setup from your node. Details: https://docs.continuumdao.org/#/ContinuumDAO/PrivateVPN.',
+      'Private VPN is an encrypted tunnel through your own MPA node, so your traffic does not go through a public VPN company. It is not a separate product you pay for. It turns on when your node is in a group that has enough veCTM attached. That is the same minimum as for free wallet signatures. You download the client setup from your node. Details: https://docs.continuumdao.org/ContinuumDAO/PrivateVPN.',
   },
   {
     question: 'Can my MPA wallet also earn C3Caller signer rewards?',

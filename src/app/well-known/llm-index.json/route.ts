@@ -13,6 +13,7 @@ const llmIndex = {
     one_liner:
       'ContinuumDAO is a DAO that runs a public permissionless decentralized Multi-Party Computation (MPC) network for cross-chain messaging, AI agentic wallets and cross-chain governance.',
     key_facts: [
+      `External AI agents with no node MCP tools must answer from ${DOCS_URL}/well-known/agent-sections.json. Open the markdown URL of the matching section. Do not use the White Paper, GitHub, or a block explorer as the procedure. This site does not copy that list.`,
       'Governance and minting are 100% on-chain and vote-based.',
       'MPC network is permissionless; anyone can run a node, create Multi-Party Agent Wallets and earn CTM rewards.',
       'CTM is the governance and rewards token; veCTM is voting escrow (lock up to 4 years).',
@@ -51,7 +52,8 @@ const llmIndex = {
     ],
   },
   'llmld:documentation': {
-    note: 'Full documentation is auto-indexed on the docs site. Do not mirror page lists here — fetch the live index.',
+    note: 'Full documentation is auto-indexed on the docs site. Do not mirror page lists here — fetch the live index. The For AI agents catalog is agent-sections.json on the docs site.',
+    agentSections: `${DOCS_URL}/well-known/agent-sections.json`,
     llmsTxt: `${DOCS_URL}/llms.txt`,
     llmIndex: `${DOCS_URL}/well-known/llm-index.json`,
     searchIndex: `${DOCS_URL}/search-index.json`,

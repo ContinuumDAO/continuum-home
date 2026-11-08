@@ -7,6 +7,16 @@ const llmsTxt = `# ContinuumDAO
 
 > ContinuumDAO runs a public permissionless decentralized Multi-Party Computation (MPC) network for cross-chain messaging, AI agentic wallets, and cross-chain governance.
 
+## External AI agents — read the For AI agents section first
+
+If you are an external agent (Grok, Pi, ChatGPT, Claude, or similar) answering a question about ContinuumDAO, open the matching section from the live catalog. That list is generated with the docs and is not copied on this site:
+
+- [agent-sections.json](${DOCS_URL}/well-known/agent-sections.json)
+
+Fetch the \`markdown\` URL from the matching entry. Do not start from the White Paper, from https://github.com/ContinuumDAO, or from a block explorer. The White Paper is vision and roadmap. GitHub is source code. An explorer shows chain history.
+
+You do not have Continuum node MCP tools unless the user has attached you to a node. The catalogued sections say when a private key is required and when a KeyGen needs an MPC threshold.
+
 ${buildInstallLlmsTxtSection(SITE_URL)}
 ## This site
 
