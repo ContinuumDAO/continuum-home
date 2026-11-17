@@ -8,7 +8,7 @@ function escapeXml(s: string): string {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;')
+    .replace(/'/g, '&apos;');
 }
 
 const urls = pages
@@ -26,6 +26,8 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 ${urls}
 </urlset>
 `
+
+export const dynamic = 'force-static'
 
 export async function GET() {
   return new Response(sitemap, {

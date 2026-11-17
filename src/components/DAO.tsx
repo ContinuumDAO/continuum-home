@@ -129,6 +129,7 @@ export function DAO() {
                       className="xxs:h-64 relative -mt-4 pr-0 sm:h-36 xl:mt-2 xl:pr-12"
                     >
                       <Transition.Child
+                        as="div"
                         enter="transition ease-in-out duration-500"
                         enterFrom="transform opacity-0"
                         enterTo="transform opacity-100"
@@ -203,6 +204,7 @@ export function DAO() {
                       className="xxs:h-64 relative -mt-4 pr-0 sm:h-36 xl:mt-2 xl:pr-12"
                     >
                       <Transition.Child
+                        as="div"
                         enter="transition ease-in-out duration-500"
                         enterFrom="transform opacity-0"
                         enterTo="transform opacity-100"
@@ -280,6 +282,7 @@ export function DAO() {
                       className="xxs:h-64 relative -mt-4 pr-0 sm:h-36 xl:mt-2 xl:pr-12"
                     >
                       <Transition.Child
+                        as="div"
                         enter="transition ease-in-out duration-500"
                         enterFrom="transform opacity-0"
                         enterTo="transform opacity-100"
@@ -356,6 +359,7 @@ export function DAO() {
                       className="xxs:h-64 relative -mt-4 pr-0 sm:h-36 xl:mt-2 xl:pr-12"
                     >
                       <Transition.Child
+                        as="div"
                         enter="transition ease-in-out duration-500"
                         enterFrom="transform opacity-0"
                         enterTo="transform opacity-100"

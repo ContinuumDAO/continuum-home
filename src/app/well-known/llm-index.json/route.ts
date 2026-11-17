@@ -63,6 +63,8 @@ const llmIndex = {
   },
 }
 
+export const dynamic = 'force-static'
+
 export async function GET() {
   return new Response(JSON.stringify(llmIndex, null, 2), {
     status: 200,

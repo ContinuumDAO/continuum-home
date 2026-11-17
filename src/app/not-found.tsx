@@ -21,13 +21,13 @@ export default function NotFound() {
         Sorry, we couldn’t find the page you’re looking for.
       </p>
       <div className="mt-10 flex justify-start">
-        <a
+        <Link
           href="/"
           className="backdrop-blur-[2px] link relative overflow-hidden border border-white px-8 py-3 text-xs font-semibold leading-6 text-white"
         >
           Go Back Home <span aria-hidden="true">↗</span>
           <span className="link-bg"></span>
-        </a>
+        </Link>
       </div>
       <style jsx>{`
         .link {

@@ -8,6 +8,8 @@ Sitemap: ${SITE_URL}/sitemap.xml
 Sitemap: ${DOCS_URL}/sitemap.xml
 `
 
+export const dynamic = 'force-static'
+
 export async function GET() {
   return new Response(robotsTxt, {
     status: 200,

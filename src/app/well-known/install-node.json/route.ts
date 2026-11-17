@@ -2,6 +2,8 @@ import { installNodeDiscovery } from '@/lib/install-node-discovery'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://continuumdao.org'
 
+export const dynamic = 'force-static'
+
 export async function GET() {
   const body = {
     '@context': ['https://schema.org', 'https://llmld.org/v1'],

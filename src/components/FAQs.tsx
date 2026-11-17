@@ -21,7 +21,7 @@ function answerWithLinks(text: string): React.ReactNode {
     ) : (
       part
     )
-  )
+  );
 }
 
 export function FAQs() {
@@ -90,5 +90,5 @@ export function FAQs() {
         </div>
       </div>
     </div>
-  )
+  );
 }

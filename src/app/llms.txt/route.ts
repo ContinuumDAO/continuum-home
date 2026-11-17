@@ -46,6 +46,8 @@ The complete documentation index lives on the docs site and is regenerated on ev
 Raw markdown for any doc page: append \`.md\` to the page URL on ${DOCS_URL}/.
 `
 
+export const dynamic = 'force-static'
+
 export async function GET() {
   return new Response(llmsTxt, {
     status: 200,

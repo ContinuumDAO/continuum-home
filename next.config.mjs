@@ -1,14 +1,12 @@
-/**
- * DO NOT upgrade Next.js (currently 13.3.4) until the Headless UI dropdown bug
- * in Next.js 13.4.x is confirmed fixed. Upgrading to 13.4+ breaks header
- * Popover dropdowns (Use Cases, Governance, etc.) due to SSR/hydration issues.
- * See: https://github.com/vercel/next.js/issues (search Headless UI / Popover).
- */
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import nextMDX from '@next/mdx'
+
+const projectDir = path.dirname(fileURLToPath(import.meta.url))
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: { appDir: true },
+  outputFileTracingRoot: projectDir,
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   output: 'export',
   images: { unoptimized: true },
